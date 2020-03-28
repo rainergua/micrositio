@@ -1,0 +1,10 @@
+.brand-logo{
+    background: transparent url(../img/logo.png);
+    background-size: cover;
+    float: inherit;
+    display: block;
+    text-indent: -999px;
+    height: 200px;
+    width: 250px;
+    margin: none;
+}

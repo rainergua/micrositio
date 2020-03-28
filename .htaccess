@@ -5,6 +5,5 @@
     RewriteRule ^(.*)$ /microsite/index.php/$1 [L]
 </IfModule>
 <IfModule !mod_rewrite.c>
-
     ErrorDocument 404 /microsite/index.php
 </IfModule>

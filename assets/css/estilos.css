@@ -3,8 +3,9 @@
     background-size: cover;
     float: inherit;
     display: block;
+    /*margin: auto;*/
     text-indent: -999px;
-    height: 200px;
-    width: 250px;
+    height: 150px;
+    width: 180px;
     margin: none;
 }

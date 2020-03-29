@@ -25,9 +25,9 @@
 	echo link_tag($link);?>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-<header>
-    <div class="container"> <!--main-->
+<body class="bg-green-1000">
+<header class="bg-gray-1000">
+    <div class="container my-2"> <!--main-->
         <div class="row justify-content-center align-items-center"><!--header-->
             <div class="col-12 col-sm-12 col-md-2 col-ld-2">
             	<a href="<?php echo base_url();?>" class="brand-logo">Logo</a>

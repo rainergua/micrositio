@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container bg-sucsess">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-ld-6">
             <div class="jumbotron">
@@ -21,18 +21,18 @@
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-ld-6">
             <div class="jumbotron">
-                <h4 class="display-4">Respuestas</h4>
+                <h5>Respuestas</h5>
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">¿Que puedo hacer si me contagio?</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et minus repellendus excepturi facilis possimus nostrum quasi blanditiis corrupti cupiditate culpa.</p>
+                        <p class="card-text">Tranquilo. Toma las medidas urgentes en tu domicilio. Aíslate en una habitación con los utencilios exclusivos para tí. Llama a los números de emergencia 800 10 1104 y te atenderemos con prontitud.</p>
                         <p class="card-text"><small class="text-muted">Actulizado hace 5 mins.</small></p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Me siento agoviado por no poder salir</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos consectetur laborum sit culpa illum maxime fugit ab illo debitis!.</p>
+                        <p class="card-text">Si tu no puedes salir estando en tu casa, imagínate las personas que estan en los hospitales aislados y con medicación. Te recomendamos hacer actividades que te distraigan. Comparte con tu familia juegos de mesa, charlas, canto y otros. Y por favor MUCHA PACIENCIA.</p>
                         <p class="card-text"><small class="text-muted">Actulizado hace 5 mins.</small></p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-ld-4">
             <div class="card text-white bg-danger mb-4" style="max-width: 24rem;">
-                <div class="card-header">Ir a Preguntas Recientes</div>
+                <div class="card-header">Preguntas Recientes</div>
                 <div class="card-body">
                     <h5 class="card-title">¿Que puedo hacer si me contagio?</h5>
                     <h5 class="card-title">Me siento agoviado por no poder salir</h5>
@@ -53,7 +53,7 @@
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-ld-4">
             <div class="card text-white bg-warning mb-4" style="max-width: 24rem;">
-                <div class="card-header">Ir a Preguntas Frecuentes</div>
+                <div class="card-header">Preguntas Frecuentes</div>
                 <div class="card-body">
                 <h5 class="card-title">¿Que puedo hacer si me contagio?</h5>
                     <h5 class="card-title">Me siento agoviado por no poder salir</h5>

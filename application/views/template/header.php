@@ -29,10 +29,10 @@
 <header>
     <div class="container"> <!--main-->
         <div class="row justify-content-center align-items-center"><!--header-->
-            <div class="col-2">
+            <div class="col">
             	<a href="<?php echo base_url();?>" class="brand-logo">Logo</a>
             </div>
-			<div class="col-10 text-center">
+			<div class="col text-center">
 				<h2>Ministerio de Educación</h2>
             	<h4>Viceministerio de Ciencia y Tecnología</h4>
             </div>

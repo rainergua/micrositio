@@ -1,10 +1,30 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-ld-6">
-            <div class="jumbotron">
+        <div class="jumbotron">
+                <h5>Listado de Preguntas Pendientes</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">¿Que puedo hacer si me contagio?</h5>
+                        <p class="card-text">Tranquilo. Toma las medidas urgentes en tu domicilio. Aíslate en una habitación con los utencilios exclusivos para tí. Llama a los números de emergencia 800 10 1104 y te atenderemos con prontitud.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Me siento agoviado por no poder salir</h5>
+                        <p class="card-text">Si tu no puedes salir estando en tu casa, imagínate las personas que estan en los hospitales aislados y con medicación. Te recomendamos hacer actividades que te distraigan. Comparte con tu familia juegos de mesa, charlas, canto y otros. Y por favor MUCHA PACIENCIA.</p>
+                    </div>
+                </div>
+                <p class="lead my-2">
+                        <a class="btn btn-secondary btn-lg" href="#" role="button">Responder</a>
+                    </p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-ld-6">
+        <div class="jumbotron">
                 <p class="lead">Por favor remita su consulta, y le responderemos a la brevedad posible.</p>
                 <hr class="my-4">
-                <?php echo form_open(base_url().'consultas/guardaMensaje');?>
+                <?php echo form_open(base_url().'consultas/guardaRespuesta');?>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nombre Completo</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo">
@@ -21,28 +41,6 @@
                         <button type="submit" class="btn btn-secondary ">Enviar consulta</button>
                     </p>
                 </form>
-            </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-ld-6">
-            <div class="jumbotron">
-                <h5>Respuestas</h5>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">¿Que puedo hacer si me contagio?</h5>
-                        <p class="card-text">Tranquilo. Toma las medidas urgentes en tu domicilio. Aíslate en una habitación con los utencilios exclusivos para tí. Llama a los números de emergencia 800 10 1104 y te atenderemos con prontitud.</p>
-                        <p class="card-text"><small class="text-muted">Actulizado hace 5 mins.</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Me siento agoviado por no poder salir</h5>
-                        <p class="card-text">Si tu no puedes salir estando en tu casa, imagínate las personas que estan en los hospitales aislados y con medicación. Te recomendamos hacer actividades que te distraigan. Comparte con tu familia juegos de mesa, charlas, canto y otros. Y por favor MUCHA PACIENCIA.</p>
-                        <p class="card-text"><small class="text-muted">Actulizado hace 5 mins.</small></p>
-                    </div>
-                </div>
-                <p class="lead my-2">
-                        <a class="btn btn-secondary btn-lg" href="<?=base_url()?>consultas/respuestas" role="button">Responder</a>
-                    </p>
             </div>
         </div>
     </div>

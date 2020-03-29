@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col">
             <div class="jumbotron">
                 <p class="lead">Por favor remita su consulta, y le responderemos a la brevedad posible.</p>
                 <hr class="my-4">
@@ -19,7 +19,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col">
             <div class="jumbotron">
                 <h4 class="display-4">Respuestas</h4>
                 <div class="card">
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4">
+        <div class="col">
             <div class="card text-white bg-danger mb-4" style="max-width: 24rem;">
                 <div class="card-header">Ir a Preguntas Recientes</div>
                 <div class="card-body">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col">
             <div class="card text-white bg-warning mb-4" style="max-width: 24rem;">
                 <div class="card-header">Ir a Preguntas Frecuentes</div>
                 <div class="card-body">
@@ -62,7 +62,7 @@
                 </div>
                 </div>
             </div>
-        <div class="col-4">
+        <div class="col">
             <div class="card text-white bg-success mb-4" style="max-width: 24rem;">
                 <div class="card-header">Consulta directa - WhatsApp</div>
                 <div class="card-body">

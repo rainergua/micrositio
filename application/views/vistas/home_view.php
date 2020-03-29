@@ -10,7 +10,7 @@
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Completo">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Escriba su mensaje</label>
+                        <label for="exampleFormControlTextarea1">Escriba su Consulta</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                     </div>
                     <p class="lead">

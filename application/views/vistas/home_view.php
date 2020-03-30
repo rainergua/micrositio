@@ -74,13 +74,37 @@
         <div class="col-12 col-sm-12 col-md-4 col-ld-4">
             <div class="card text-white bg-success mb-4" style="max-width: 24rem;">
                 <div class="card-header"><h5>Consulta directa - WhatsApp</h5></div>
-                <div class="card-body">
-                    <p class="card-title"><a href="https://web.whatsapp.com/send?phone=59167325245&text=Hola!%20Tengo%20una%20consulta!" class="text-light" target="_blank">715-12345 - Especialista 1</a></p>
-                    <p class="card-title"><a href="https://web.whatsapp.com/send?phone=59167325245&text=Hola!%20Tengo%20una%20consulta!" class="text-light" target="_blank">715-12345 - Especialista 2</a></p>
-                    <p class="card-title"><a href="https://web.whatsapp.com/send?phone=59167325245&text=Hola!%20Tengo%20una%20consulta!" class="text-light" target="_blank">715-12345 - Especialista 3</a></p>
-                    <p class="card-title"><a href="https://web.whatsapp.com/send?phone=59167325245&text=Hola!%20Tengo%20una%20consulta!" class="text-light" target="_blank">715-12345 - Especialista 4</a></p>
+                <div class="card-body" id="whatsapp">
+                    
                 </div>
             </div>
         </div>
     </div><!--ROW-->
 </div> 
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v6.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="809602779140911"
+  theme_color="#888888"
+  logged_in_greeting="Hola te podemos ayudar???"
+  logged_out_greeting="Hola te podemos ayudar???">
+      </div>

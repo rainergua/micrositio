@@ -12,6 +12,7 @@ class Consultas extends CI_Controller {
 	public function index()
 	{   
         $data['recientes'] = $this->mensaje_model->getRecientes();
+        $data['frecuentes'] = $this->mensaje_model->getFrecuentes();
 		$this->load->view('template/header');
 		$this->load->view('vistas/home_view', $data);
 		$this->load->view('template/footer');
@@ -33,6 +34,8 @@ class Consultas extends CI_Controller {
     public function respuestas()
 	{   
         $data['recientes'] = $this->mensaje_model->getRecientes();
+        $data['frecuentes'] = $this->mensaje_model->getFrecuentes();
+        $data['preguntas'] = $this->mensaje_model->getPreguntas();
 		$this->load->view('template/header');
 		$this->load->view('vistas/responder_view', $data);
 		$this->load->view('template/footer');

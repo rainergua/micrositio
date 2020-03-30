@@ -7,11 +7,15 @@ class Mensaje_model extends CI_Model {
     	parent::__construct();
     }
     public function getRecientes(){
+        
+        $this->db->where('pregunta_categoria !=', 'frecuente');
         $this->db->order_by('pregunta_date', 'desc');
         return $this->db->get('preguntas', 3)->result();
     }
-    public function obtieneFrecuentes(){
-
+    public function getFrecuentes(){
+        $this->db->where('pregunta_categoria', 'frecuente');
+        $this->db->order_by('pregunta_date', 'desc');
+        return $this->db->get('preguntas', 3)->result();
     }
     public function guardarUsuario($datos){
         //Para uso con PDO_driver postgres
@@ -34,6 +38,11 @@ class Mensaje_model extends CI_Model {
 		}else{
 			return FALSE;
 		}
+    }
+    public function getPreguntas(){
+        $this->db->where('pregunta_ok', FALSE);
+        $this->db->order_by('pregunta_date', 'desc');
+        return $this->db->get('preguntas')->result();
     }
 
     

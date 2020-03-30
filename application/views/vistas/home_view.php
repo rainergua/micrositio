@@ -63,10 +63,11 @@
             <div class="card text-white bg-warning mb-4" style="max-width: 24rem;">
                 <div class="card-header"><h5>Preguntas Frecuentes</h5></div>
                 <div class="card-body">
-                    <p class="card-title">¿Que puedo hacer si me contagio?</p>
-                    <p class="card-title">Me siento agoviado por no poder salir</p>
-                    <p class="card-title">¿Que puedo hacer si me contagio?</p>
-                    <p class="card-title">¿Que puedo hacer si me contagio?</p>
+                     <?php
+                        foreach ($frecuentes as $row) {
+                            echo '<p class="card-title">'.$row->pregunta_cont.'</p>';
+                        }
+                    ?>
                 </div>
                 </div>
             </div>

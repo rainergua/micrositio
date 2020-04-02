@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-ld-6">
@@ -16,34 +17,53 @@
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-ld-6">
             <div class="jumbotron">
-            <div class="respform" id="respform">
-                <p class="lead" id="resp_on">Haga click en un pregunta para responderla</p>
-                <hr class="my-4">
-                <?php 
-                    $att = array('id' => 'formresp', 'name' => 'formresp');
-                    echo form_open(base_url().'consultas/guardaRespuesta', $att);?>
-                    <?=form_hidden('carnet',$this->session->userdata('carnet'))?>
-                    <?=form_hidden('codigo',$this->session->userdata('codigo'))?>
-                    <input type="hidden" name="preg_id" id="preg_id" value="0">
-                    <div class="form-group">
-                        <h5>
-                        Bienvenido(a): <?=$this->session->userdata('nombre');?></h5>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Categoría de Pregunta</label>
-                        <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoría">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Escriba su Respuesta</label>
-                        <textarea class="form-control" id="repuesta" name="respuesta" rows="5"></textarea>
-                    </div>
-                    <p class="lead">
-                        <button type="button" class="btn btn-secondary" id="btn_resp">Enviar Respuesta</button>
-                        <a class="btn btn-danger" href="<?php echo base_url().'login/logout';?>">Salir</a>
-                        <div class="exito">Su respuesta fue enviada con éxito.</div>
-                    </p>
-                </form>
-            </div><!--RESP-FORM-->
+                <div class="login">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Bienvenido</h3>
+                        </div>
+                        <div class="card-body">
+							<form action="<?=base_url()?>login/ingresar" id="form_login" method="post">
+                            <?=form_hidden('token',$token)?>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Usuario" name="username" id="username">
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Iniciar Sesión" class="btn btn-secondary" id="btnlogin">
+                            </div>
+                            
+							</form>
+                            <div class="error"></div>
+						</div><!--CARD BODY-->
+						<div class="card-footer">
+							<div class="d-flex justify-content-center links">
+								Si usted esta registrado como preofesional puede Ingresar
+							</div>
+							<div class="d-flex justify-content-center">
+								De lo contrario comuníquese con nosotros.
+							</div>
+                           
+						</div>
+					</div><!--CARD-->
+                </div><!--LOGIN END-->
+                    
+
+
+
+                    
+
+
+
+            
             </div><!--FIN JUMBOTRON-->
         </div><!--COL-->
     </div><!--row-->

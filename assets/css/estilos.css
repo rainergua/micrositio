@@ -14,12 +14,85 @@ footer{
 }
 
 .bg-green-1000{
-    background-color: #84C8B1!important;
+    background-color: #342A45!important;
+    /*background-color: rgba(52, 42, 69, 0.9)!important;*/
 }
 
 .bg-gray-1000{
     background-color: #F8F9FA!important;
 }
+.bg-light1000{
+    background-color: rgb(237, 243, 248)!important;
+}
+
 .pregunta {
     font-size: 1.1rem;
 }
+.exito{
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: lightsalmon;
+}
+/*ALTO FIJO DE UN DIV, EN ESTE CASO CON CLASE .CAJASPIE*/
+.cajaspie{
+    height: 200px;
+    max-width: 24rem;
+}
+.card-body{
+    overflow: auto;
+}
+.jumbotron{
+    height: 650px;
+    overflow: auto;
+}
+
+
+
+
+/*LINEAS QUE ESTILIZAN LOS SROLL*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 115px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+      /*el color de la barrita de desplazamiento*/
+    background: rgb(80, 76, 82);
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background:rgba(0,0,15,0.7);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0,0,15,1);
+  }
+  ::-webkit-scrollbar-track {
+    
+    /* color de fondo de la barrita de desplazamiento
+    background: #666666;*/
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #666666;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: lightsalmon;
+     /*#333333;*/
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  body { 
+      SCROLLBAR-FACE-COLOR:red; 
+      SCROLLBAR-HIGHLIGHT-COLOR: brown; 
+      SCROLLBAR-SHADOW-COLOR: #6699CC; 
+      SCROLLBAR-3DLIGHT-COLOR: #FFFFFF; 
+      SCROLLBAR-ARROW-COLOR: #FFFFFF; 
+      SCROLLBAR-TRACK-COLOR: #E3E3E3; 
+      SCROLLBAR-DARKSHADOW-COLOR: #000000; 
+    }

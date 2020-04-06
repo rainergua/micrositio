@@ -8,9 +8,9 @@ class Mensaje_model extends CI_Model {
     }
 
     public function guardarUsuario($datos){
-        $data = $datos;
-        $this->db->where('user_name', $data['user_name']);
-        $this->db->where('user_fono', $data['user_fono']);        
+        //$data = $datos;
+        $this->db->where('user_name', $datos['user_name']);
+        $this->db->where('user_fono', $datos['user_fono']);        
         $query = $this->db->get('users');
         if($query->num_rows() == 0){
             $this->db->insert('users', $datos);
@@ -21,28 +21,34 @@ class Mensaje_model extends CI_Model {
             return FALSE;
         }
     }
+    public function guardarWap($datos){
+        $this->db->insert('whatsapps',$datos);
+        return $datos['wap_codigo'];
+    }
+
     public function guardarPregunta($datos){
-        $this->db->insert('preguntas',$datos);
-        $mensaje_codigo = $datos['pregunta_codigo'];
-        return $mensaje_codigo;
+        $this->db->insert('preguntas', $datos);
+        return $datos['pregunta_codigo'];
     }
-    public function guardarRespuesta($datos,$pregunta_categoria){
-        $this->db->insert('respuestas',$datos);        
-        $respuesta_codigo = $datos['respuesta_codigo'];
-        $this->db->set('pregunta_ok', TRUE);
-        $this->db->set('pregunta_categoria', $pregunta_categoria);
-        $this->db->where('pregunta_codigo', $datos['respuesta_pregunta_codigo']);
-        $this->db->update('preguntas');
-        return $respuesta_codigo;
+    public function guardarRespuesta($datos){
+        $this->db->insert('respuestas', $datos);        
+        return $datos['respuesta_codigo'];
     }
-
-
+    public function actualizaPregunta($datos, $pregunta){
+        $this->db->where('pregunta_codigo', $pregunta);
+        $this->db->update('preguntas', $datos);
+        return $pregunta;
+    }
+    public function getUsuario( $codigo){
+        $this->db->where('pregunta_codigo', $codigo);       
+        $user_codigo = $this->db->get('preguntas')->row()->pregunta_user_codigo;
+        $this->db->where('user_codigo', $user_codigo);
+        return $this->db->get('users')->row();
+    }
 
     public function obtCodigo($tabla, $id){
-        $this->db->where('preunta_id', $id);
-        
-        return $this->db->get($tabla)->row->pregunta_codigo;
-        
+        $this->db->where('pregunta_id', $id);       
+        return $this->db->get($tabla)->row()->pregunta_codigo;       
     }
 
     public function getRecientes(){
@@ -58,19 +64,31 @@ class Mensaje_model extends CI_Model {
         return $this->db->get('preguntas', 3)->result();
     }
     public function getPreguntas(){
-        $this->db->where('pregunta_ok', FALSE);
-        $this->db->order_by('pregunta_date', 'desc');
-        return $this->db->get('preguntas')->result();
+        $this->db->from('preguntas p');
+        $this->db->join('users u', 'p.pregunta_user_codigo=u.user_codigo');
+        $this->db->where('p.pregunta_ok', FALSE);
+        $this->db->order_by('pregunta_date');
+        $this->db->distinct();
+        return $this->db->get()->result();
+
     }
     public function getRespondidas(){    
         $this->db->from('preguntas p');
         $this->db->join('respuestas r', 'p.pregunta_codigo=r.respuesta_pregunta_codigo');
         $this->db->where('p.pregunta_ok', TRUE);
-        $this->db->limit(2);
+        $this->db->limit(3);
         $this->db->order_by('r.respuesta_date', 'desc');
         return $this->db->get()->result();
     }
-
+    public function getPregUsuario(){
+        $this->db->select('pregunta_codigo, pregunta_cont, user_name, user_ocupacion, user_edad');
+        $this->db->from('preguntas p');
+        $this->db->join('users u', 'p.pregunta_user_codigo=u.user_codigo');
+        $this->db->where('p.pregunta_ok', FALSE);
+        $this->db->order_by('pregunta_date');
+        $this->db->distinct();
+        return $this->db->get()->result();
+    }
 }
 
 /* End of file Mensaje_model.php */

@@ -21,13 +21,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         {
             switch ($this->session->userdata('perfil')) {
                 case '':
-                    $data['recientes'] = $this->mensaje_model->getRecientes();
-                    $data['frecuentes'] = $this->mensaje_model->getFrecuentes();
+                    $data1['recientes'] = $this->mensaje_model->getRecientes();
+                    $data1['frecuentes'] = $this->mensaje_model->getFrecuentes();
                     $data['preguntas'] = $this->mensaje_model->getPreguntas();
                     $data['token'] = $this->token();
                     $data['titulo'] = 'Ingrese sus Datos';
                     $this->load->view('template/header');
                     $this->load->view('vistas/login_view',$data);
+                    $this->load->view('vistas/fichas_view',$data1);
                     $this->load->view('template/footer');
                     break;
                 case 'e':
@@ -35,11 +36,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     break;
                 default:
                     $data['token'] = $this->token();
-                    $data['frecuentes'] = $this->mensaje_model->getFrecuentes();
+                    $data1['recientes'] = $this->mensaje_model->getRecientes();
+                    $data1['frecuentes'] = $this->mensaje_model->getFrecuentes();
                     $data['preguntas'] = $this->mensaje_model->getPreguntas();
                     $data['titulo'] = 'Ingrese sus datos';
                     $this->load->view('template/heder');
                     $this->load->view('vistas/login_view',$data);
+                    $this->load->view('vistas/fichas_view',$data1);
                     $this->load->view('template/footer');
                     break;
             }

@@ -1,16 +1,16 @@
-
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-ld-6">
             <div class="jumbotron" id="preg_off">
                 <h5>Listado de Preguntas Pendientes</h5>
                 <?php
-                        foreach ($preguntas as $row) {
-                            echo '<div class="card">
-                                    <div class="card-body">
-                                        <h5 class="pregunta"><a href="#" id="'.$row->pregunta_codigo.'" class="prueba">'.$row->pregunta_cont.'</a></h5>
-                                    </div>
-                                </div>';
+                    foreach ($preguntas as $row) {
+                        echo '<div class="card">
+                            <div class="card-body">
+                                <h5 class="pregunta"><a href="#" id="'.$row->pregunta_codigo.'" class="prueba">'.$row->pregunta_cont.'</a></h5>
+                            </div>
+                            <p class="card-text pl-3"><small class="text-muted"><b>'.$row->user_name.', '.$row->user_ocupacion.', Edad: '.$row->user_edad.'</b></small></p>
+                        </div>';
                         }
                     ?>
             </div>
@@ -55,52 +55,11 @@
 						</div>
 					</div><!--CARD-->
                 </div><!--LOGIN END-->
-                    
-
-
-
-                    
-
-
-
-            
-            </div><!--FIN JUMBOTRON-->
+           </div><!--FIN JUMBOTRON-->
         </div><!--COL-->
     </div><!--row-->
-
-
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-4 col-ld-4">
-            <div class="card text-white bg-danger mb-4 cajaspie">
-                <div class="card-header"><h5>Preguntas Recientes</h5></div>
-                <div class="card-body">
-                    <?php
-                        foreach ($recientes as $row) {
-                            echo '<p class="card-title">'.$row->pregunta_cont.'</p>';
-                        }
-                    ?>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 col-ld-4">
-            <div class="card text-white bg-warning mb-4 cajaspie">
-                <div class="card-header"><h5>Preguntas Frecuentes</h5></div>
-                <div class="card-body">
-                    <?php
-                        foreach ($frecuentes as $row) {
-                            echo '<p class="card-title">'.$row->pregunta_cont.'</p>';
-                        }
-                    ?>
-                </div>
-                </div>
-            </div>
-        <div class="col-12 col-sm-12 col-md-4 col-ld-4">
-            <div class="card text-white bg-success mb-4 cajaspie">
-                <div class="card-header"><h5>Consulta directa - WhatsApp</h5></div>
-                <div class="card-body" id="whatsapp">
-                    
-                </div>
-            </div>
-        </div>
-    </div><!--ROW-->
 </div> 
+
+
+
+

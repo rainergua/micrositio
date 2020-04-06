@@ -42,10 +42,17 @@ footer{
     overflow: auto;
 }
 .jumbotron{
+    padding: 1rem 1rem;
     height: 650px;
     overflow: auto;
 }
 
+.error {
+  color: #ff0000;
+  font-weight: bolder;
+  font-size: 0.7rem;
+  padding:1px 20px 1px 5px;
+}
 
 
 

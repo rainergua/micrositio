@@ -35,7 +35,7 @@ footer{
 }
 /*ALTO FIJO DE UN DIV, EN ESTE CASO CON CLASE .CAJASPIE*/
 .cajaspie{
-    height: 200px;
+    height: 250px;
     max-width: 24rem;
 }
 .card-body{

@@ -10,7 +10,7 @@
 
 		gtag('config', 'UA-162797262-1');
 		</script>
-	<title>Psicoloía a tu servicio - Ministerio de Educación</title>
+	<title>Psicología a tu servicio - Ministerio de Educación</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.4.1.min.js'; ?>"></script>

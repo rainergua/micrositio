@@ -1,7 +1,6 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-//$this->load->library('abstime(10000024536176)');
 class Consultas extends CI_Controller {
     public function __construct()
     {
@@ -58,7 +57,7 @@ class Consultas extends CI_Controller {
             'wap_codigo' => $this->generaCodigo(),
             //TODO
             /*AQUI SE DEBE IMPLEMENTAR EL PROCESO DE SELECCION ALEATORIA DE LOS ESPECIALISTAS*/  
-            'wap_especialista_codigo' => ""
+            'wap_especialista_codigo' => $this->mensaje_model->getRandomEsp()
         );
         $wap_id = $this->mensaje_model->guardarWap($data1);
         $mensaje = '*Mi nombre es:* '.$data2['user_name']. ' *Me siento:* '.$data1['wap_que'].' *Desde:* '.$data1['wap_cuando'].' *Porque:* '. $data1['wap_porque'];
@@ -85,7 +84,6 @@ class Consultas extends CI_Controller {
         $this->mensaje_model->guardarPregunta($data2);
         $res = 1;
         echo json_encode($res);
-        //$this->index();
     }
     public function guardaRespuesta(){
         $respuesta = $this->input->post('respuesta');
@@ -97,9 +95,6 @@ class Consultas extends CI_Controller {
             'respuesta_date' => date("Y-m-d H:i:s"),      
             'respuesta_cont' => $respuesta,
             'respuesta_pregunta_codigo' => $preg_id,
-            /*<?=form_hidden('carnet',$this->session->userdata('carnet'))?>
-            <?=form_hidden('codigo',$this->session->userdata('codigo'))?>*/
-            //'respuesta_pregunta_codigo' => $this->session->userdata('codigo'),
             'respuesta_user_codigo' => $this->session->userdata('codigo'),
             'respuesta_codigo' => $this->generaCodigo()
         );
@@ -110,10 +105,6 @@ class Consultas extends CI_Controller {
         $valor2 = $this->actPreguntas($data, $data2['respuesta_pregunta_codigo']);
         $res = 1;
         echo json_encode($res);
-        //$this->respuestas();
-        //print($this->input->post('nombre'));*/
-        //print_r($data);
-        //print_r($data2);
     }
     public function actPreguntas($data, $codigo){
        $valor =  $this->mensaje_model->actualizaPregunta($data, $codigo);
@@ -123,5 +114,43 @@ class Consultas extends CI_Controller {
     public function obtPregUsu(){
         $data = $this->mensaje_model->getPregUsuario();
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function buscar(){
+        $data['respuesta'] = $this->mensaje_model->buscaRaspuesta($this->input->post('buscarfono'));
+        $data1['recientes'] = $this->mensaje_model->getRecientes();
+        $data1['frecuentes'] = $this->mensaje_model->getFrecuentes();
+		$this->load->view('template/header');
+        $this->load->view('vistas/respuesta_view', $data);
+        $this->load->view('vistas/fichas_view', $data1);
+		$this->load->view('template/footer');
+        
+    }
+
+    private function diaHoy(){
+        $day = date("l");
+        switch ($day) {
+            case "Sunday":
+               return "domingo";
+            break;
+            case "Monday":
+                return "lunes";
+            break;
+            case "Tuesday":
+                return "martes";
+            break;
+            case "Wednesday":
+                return "miércoles";
+            break;
+            case "Thursday":
+                return "jueves";
+            break;
+            case "Friday":
+                return "viernes";
+            break;
+            case "Saturday":
+                return "sábado";
+            break;
+}
     }
 }

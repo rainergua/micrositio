@@ -32,6 +32,19 @@ function inicio(){
     
     /***********
      * ********** */
+    
+    $("#form_buscar").validate({
+        rules: {
+            'buscarfono': {required: true, min:60000000, max: 79999999}
+        },
+        messages: {
+            'buscarfono': {required: "El Teléfono es Obligatorio", min: "Teléfono Celular Inválido", max: "Teléfono Celular Inválido"}
+        },
+        submitHandler: function(form){
+            form.submit();
+            return false;
+        }
+    });
 
     $("#formpreg").validate({
         rules: {
@@ -84,7 +97,34 @@ function inicio(){
         }
     });
 
-    
+    $("#formwap1").validate({
+        rules: {
+            'nombre': {required: true},
+            'fono': {required: true, min:60000000, max: 79999999},
+            'edad': {required: true, min: 18},
+            'ocupacion': {required: true},
+            'preg1': {required: true},
+            'preg2': {required: true},
+            'preg3': {required: true}
+        },
+        messages: {
+            'nombre': {required: "El Nombre Completo es Obligatorio"},
+            'fono': {required: "El Teléfono es  obligatorio", min: "Teléfono Celular Inválido", max: "Teléfono Celular Inválido"},
+            'edad': {required: "La edad es obligatoria", min: "Debes ser mayor de 18 años"},
+            'ocupacion': {required: "Debe ingresar su ocupación"},
+            'preg1': {required: "Debe enviar su respuesta"},
+            'preg2': {required: "Debe enviar su respuesta"},
+            'preg3': {required: "Debe enviar su respuesta"}
+        },
+        submitHandler: function(form){
+            if($('#nopasaw').val()=='')
+            {
+                envWap();
+            }
+            return false;
+        }
+    });
+
     $("#formresp").validate({
         rules: {
             'categoria': {required: true},

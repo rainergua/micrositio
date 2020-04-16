@@ -89,6 +89,36 @@ class Mensaje_model extends CI_Model {
         $this->db->distinct();
         return $this->db->get()->result();
     }
+    public function buscaRaspuesta($fono){
+        $this->db->select('user_name, user_fono, user_ocupacion, user_edad, pregunta_cont, pregunta_date, 
+        pregunta_categoria, pregunta_tipo, respuesta_cont, respuesta_date');
+        $this->db->from('preguntas p');
+        $this->db->join('respuestas r', 'p.pregunta_codigo=r.respuesta_pregunta_codigo');
+        $this->db->join('users u', 'p.pregunta_user_codigo=u.user_codigo');
+        $this->db->where('p.pregunta_ok', TRUE);
+        $this->db->where('u.user_fono', $fono);
+        $this->db->order_by('r.respuesta_date', 'desc');
+        return $this->db->get()->result();
+    }
+
+    function getRandomEsp()
+    {
+        $num_casos = $this->db->get('num_casos')->row()->num_casos - 1;
+        $this->db-where('especialista_cont', $num_casos);
+        $this->db->order_by('especialista_id', 'RANDOM');
+        $this->db->limit(1);
+        $resultado = $this->db->get('especialistas');
+        if($resultado->num_rows()>0){
+            $this->db->set('especialista_cont', 'especialista_cont + 1');
+            $this->db->where('especialista_id', $resultado->row()->especialista_id); 
+            $this->db->update('especialistas');
+            return $resultado->row()->especialista_codigo;
+        }else{
+            $this->db->set('num_casos', 'num_casos + 1');
+            $this->db->update('num_casos');
+            $this->getRandomEsp();
+        }
+    }
 }
 
 /* End of file Mensaje_model.php */

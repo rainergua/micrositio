@@ -29,19 +29,21 @@
                 <div class="card-header "><h5><a class="text-white"  data-toggle="modal" href="#myModal"  id="myBtn">
                     <i class="fab fa-whatsapp"  style="font-size:24px"></i>  Consulta directa - WhatsApp</a></h5></div>
                     <div class="card-body" id="whatsapp">
+                    <form action="<?=base_url()?>consultas/buscar" id="form_buscar" method="post">
                         También puedes introducir tu número de teléfono y encontrar tu pregunta:
                         <div class="input-group form-group mt-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Teléfono" name="username" id="username">
+                            <input type="text" class="form-control" placeholder="Teléfono" name="buscarfono" id="buscarfono">
                         </div>
                         <div class="form-group">
-                                <button type="button" class="btn btn-secondary" id="btnlogin">
+                                <button type="submit" class="btn btn-secondary" id="btnbuscar" name="btnbuscar">
                                 <i class="fas fa-search"></i>
                                 Buscar
                                 </button>
                         </div>
+                    </form>
                     </div>
             </div>
         </div>

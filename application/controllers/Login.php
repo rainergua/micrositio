@@ -7,9 +7,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             parent::__construct();
             $this->load->model('login_model');
             $this->load->model('mensaje_model');
-            
-            //$this->load->library('form_validation');
-            //$this->load->database('default');
         }
         public function valido(){
             if($this->session->userdata('is_logued_in') == FALSE)
@@ -49,15 +46,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         public function ingresar()
         {
-            //print("Entro a ingresar y su token es:" . $this->session->userdata('token'));
             if($this->input->post('token') && $this->input->post('token') == $this->session->userdata('token'))
             {
-                //print("Entro al token");
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
                 //Verifica en la BBDD si esta el usuario o Unidad Educativa
                 $check_user = $this->login_model->login_user($username,$password);
-                //print_r($check_user);
                 if($check_user != FALSE)
                 {
                     //ASigna al array data el estado logueado, su id, su perfil(administrador, director), su nombre de usuario
@@ -79,7 +73,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     redirect(base_url().'login');
                 }
             }else{
-                //print("El token es: ".$this->input->post('token'));
                 redirect(base_url().'login');
             }
         }
